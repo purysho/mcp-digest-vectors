@@ -43,6 +43,6 @@ discovery should start in a pending state.
    That fixes both false alarms. Keep the exact-integer behaviour as a separate check if
    you want to keep catching 2^53+ changes.
 2. Parse MCP stdout with a reader that rejects duplicate member names (the strict parser
-   in `rust/src/json.rs` here is dependency-free and ~300 lines), or validate with a
+   in `rust/src/json.rs` here is dependency-free and under 400 lines), or validate with a
    duplicate-detecting pass before `from_slice::<Value>`.
 3. Add `runner/latch-harness` (or the vectors directly) to Latch's adversarial test matrix.
