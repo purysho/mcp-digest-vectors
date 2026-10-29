@@ -1,6 +1,6 @@
 # Results
 
-Generated 2026-10-29 by `runner/run.py` against 44 vectors (`mcp-tool-digest/v1-draft`).
+Generated 2026-10-29 by `runner/run.py` against 45 vectors (`mcp-tool-digest/v1-draft`).
 
 Each tool pinned the fixture server while it served `before`, then checked it while it served `after`. Scores count only vectors with a clear security answer; `scope` and `informational` vectors are shown in the matrix but not scored. **These are results on synthetic fixtures, run once, in a sandbox; read the per-tool notes before drawing conclusions about any project.**
 
@@ -8,11 +8,11 @@ Each tool pinned the fixture server while it served `before`, then checked it wh
 
 | Tool | Version | Control | No false alarm on equivalent input | Drift caught | Parser-differential input refused or flagged | Full-scope members flagged | Harness errors |
 |---|---|---|---|---|---|---|---|
-| [reference](https://github.com/purysho/mcp-digest-vectors) | builtin | unchanged | 8/8 | 18/18 | 10/10 | 6/6 | 0 |
-| [naive-raw-bytes](https://github.com/purysho/mcp-digest-vectors) | builtin | unchanged | 0/8 | 18/18 | 10/10 | 6/6 | 0 |
-| [naive-sorted-json](https://github.com/purysho/mcp-digest-vectors) | builtin | unchanged | 5/8 | 18/18 | 9/10 | 6/6 | 0 |
-| [naive-description-only](https://github.com/purysho/mcp-digest-vectors) | builtin | unchanged | 8/8 | 10/18 | 6/10 | 0/6 | 0 |
-| [latch](https://github.com/purysho/Latch) | de954a8 | unchanged | 6/8 | 18/18 | 9/10 | 6/6 | 0 |
+| [reference](https://github.com/purysho/mcp-digest-vectors) | builtin | unchanged | 9/9 | 18/18 | 10/10 | 6/6 | 0 |
+| [naive-raw-bytes](https://github.com/purysho/mcp-digest-vectors) | builtin | unchanged | 0/9 | 18/18 | 10/10 | 6/6 | 0 |
+| [naive-sorted-json](https://github.com/purysho/mcp-digest-vectors) | builtin | unchanged | 6/9 | 18/18 | 9/10 | 6/6 | 0 |
+| [naive-description-only](https://github.com/purysho/mcp-digest-vectors) | builtin | unchanged | 9/9 | 10/18 | 6/10 | 0/6 | 0 |
+| [latch](https://github.com/purysho/Latch) | de954a8 | unchanged | 7/9 | 18/18 | 9/10 | 6/6 | 0 |
 | [guardbench](https://github.com/Manishmaurya89/mcp-guardbench) | not run | – | – | – | – | – | `guardbench` not on PATH; pip install mcp-guardbench |
 | [mcp-scrutiny](https://github.com/bryand410/mcp-scrutiny) | not run | – | – | – | – | – | `mcp-scrutiny` not on PATH; pip install mcp-scrutiny (Python 3.11+) |
 | [mcpward](https://github.com/TsvetanG2/mcpward) | not run | – | – | – | – | – | `mcpward` not on PATH; npm install -g mcpward (Node 22+) |
@@ -32,6 +32,7 @@ Control = identical before/after listing; anything but `unchanged` means the too
 | `eq-unicode-escapes` | unchanged | pass | **FALSE ALARM** | pass | pass | pass |
 | `eq-solidus-escape` | unchanged | pass | **FALSE ALARM** | pass | pass | pass |
 | `eq-control-escape` | unchanged | pass | **FALSE ALARM** | pass | pass | pass |
+| `eq-astral-key-order` | unchanged | pass | **FALSE ALARM** | pass | pass | pass |
 | `eq-tool-order` | unchanged | pass | **FALSE ALARM** | **FALSE ALARM** | pass | pass |
 | `drift-description-appended` | changed | pass | pass | pass | pass | pass |
 | `drift-zero-width` | changed | pass | pass | pass | pass | pass |

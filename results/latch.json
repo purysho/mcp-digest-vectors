@@ -65,6 +65,14 @@
       "detail": "added=0 changed=0 missing=0 unchanged=3"
     },
     {
+      "id": "eq-astral-key-order",
+      "category": "equivalence",
+      "security": "unchanged",
+      "outcome": "unchanged",
+      "verdict": "pass",
+      "detail": "added=0 changed=0 missing=0 unchanged=3"
+    },
+    {
       "id": "eq-tool-order",
       "category": "equivalence",
       "security": "unchanged",

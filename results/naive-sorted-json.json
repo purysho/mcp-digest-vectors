@@ -6,7 +6,7 @@
   "version": "builtin",
   "control": "unchanged",
   "control_detail": "",
-  "seconds": 3.5,
+  "seconds": 3.9,
   "rows": [
     {
       "id": "eq-key-order",
@@ -58,6 +58,14 @@
     },
     {
       "id": "eq-control-escape",
+      "category": "equivalence",
+      "security": "unchanged",
+      "outcome": "unchanged",
+      "verdict": "pass",
+      "detail": ""
+    },
+    {
+      "id": "eq-astral-key-order",
       "category": "equivalence",
       "security": "unchanged",
       "outcome": "unchanged",

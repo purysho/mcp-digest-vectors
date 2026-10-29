@@ -1,6 +1,6 @@
 {
   "version": "mcp-tool-digest/v1-draft",
-  "count": 44,
+  "count": 45,
   "vectors": [
     {
       "id": "eq-key-order",
@@ -79,6 +79,18 @@
       "category": "equivalence",
       "question": "Q2",
       "title": "A tab in a description written as \\t vs \\u0009",
+      "expect": {
+        "desc": "same",
+        "four-field": "same",
+        "full": "same"
+      },
+      "security": "unchanged"
+    },
+    {
+      "id": "eq-astral-key-order",
+      "category": "equivalence",
+      "question": "Q2",
+      "title": "Property names U+FF61... and U+1F600... in either order",
       "expect": {
         "desc": "same",
         "four-field": "same",

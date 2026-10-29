@@ -15,7 +15,7 @@ which the fixture server does not implement.
   `outputSchema`, `_meta`, `icons` and unknown members.
 - **Better than RFC 8785 on large integers.** serde_json keeps `9007199254740993` exact, so
   `limit-int-beyond-2-53` is flagged; a JCS digest cannot see that change.
-- **False alarms: 2/8 equivalence vectors.** `eq-number-forms` (`20` vs `2e1`, `1` vs `1.0`)
+- **False alarms: 2/9 equivalence vectors.** `eq-number-forms` (`20` vs `2e1`, `1` vs `1.0`)
   and `eq-negative-zero` (`0` vs `-0.0`). serde_json stores these as an integer in one listing
   and a float in the other, and serializes them differently (`20` vs `20.0`), so the sorted-key
   canonicalization in `schema.rs` produces different bytes. A server that switches JSON

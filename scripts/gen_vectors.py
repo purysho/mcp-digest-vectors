@@ -175,6 +175,19 @@ vec("eq-control-escape", "equivalence", "Q2", "A tab in a description written as
     "Two escapes for the same character.",
     _tab_before, replace_once(_tab_before, "email\\tto", "email\\u0009to"), ALL_SAME, "unchanged")
 
+def _astral(doc, order):
+    props = {"｡label": {"type": "string"}, "\U0001F600mood": {"type": "string"}}
+    tool(doc, "search_docs")["inputSchema"]["properties"] = {k: props[k] for k in order}
+
+
+_astral_before = mutated(lambda d: _astral(d, ["｡label", "\U0001F600mood"]))
+vec("eq-astral-key-order", "equivalence", "Q2",
+    "Property names U+FF61... and U+1F600... in either order",
+    "RFC 8785 sorts by UTF-16 code units, which puts the emoji (surrogate D83D) before U+FF61; "
+    "code-point sorting puts it after. Both sides must give the same digest, and the known answers "
+    "only match an implementation that sorts by UTF-16.",
+    _astral_before, mutated(lambda d: _astral(d, ["\U0001F600mood", "｡label"])), ALL_SAME, "unchanged")
+
 vec("eq-tool-order", "equivalence", "Q2", "Tools listed in a different order",
     "List order is not meaningful for tool identity. The set digest sorts tools by name.",
     B, mutated(lambda d: d["tools"].reverse()), ALL_SAME, "unchanged")

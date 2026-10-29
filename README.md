@@ -1,6 +1,6 @@
 # mcp-digest-vectors
 
-**Test vectors for pinning MCP tool definitions.** 44 labeled before/after pairs of
+**Test vectors for pinning MCP tool definitions.** 45 labeled before/after pairs of
 `tools/list` results, two independent reference implementations that agree on every
 known answer, a fixture MCP server that serves the vectors byte for byte, and a runner
 that scores real pinning tools against them.
@@ -35,7 +35,7 @@ clients can *check* compliance instead of claiming it.
 
 | Category | Count | What it tests |
 |---|---|---|
-| `eq-*` equivalence | 8 | Same definition, different bytes: key order, whitespace, `20`/`2e1`, `-0.0`, `\u` escapes, `\/`, tool order. Flagging these is a false alarm. |
+| `eq-*` equivalence | 9 | Same definition, different bytes: key order (including UTF-16 vs code-point ordering of astral-plane names), whitespace, `20`/`2e1`, `-0.0`, `\u` escapes, `\/`, tool order. Flagging these is a false alarm. |
 | `drift-*` | 19 | Real changes: appended instructions, zero-width and homoglyph edits, NFD vs NFC, ANSI escapes, nested parameter descriptions, required fields, defaults, enums, `readOnlyHint` flips, tools added/removed/renamed. |
 | `scope-*` | 6 | Members only a full-object digest sees: `title`, `outputSchema`, `_meta` (including MCP Apps `resourceUri`), `icons`, unknown members. |
 | `reject-*` | 10 | Parser differentials: duplicate keys (malicious first / last / nested), duplicate tool names, lone surrogates, NaN, `1e400`, invalid UTF-8, missing names. |
@@ -47,11 +47,11 @@ Full matrix: [`results/RESULTS.md`](results/RESULTS.md).
 
 | Tool | No false alarm | Drift caught | Parser-differential handled | Full scope |
 |---|---|---|---|---|
-| reference (this repo) | 8/8 | 18/18 | 10/10 | 6/6 |
-| [Latch](https://github.com/purysho/Latch) `de954a8` | 6/8 | 18/18 | 9/10 | 6/6 |
-| baseline: raw-bytes SHA-256 | 0/8 | 18/18 | 10/10 | 6/6 |
-| baseline: `json.dumps(sort_keys=True)` | 5/8 | 18/18 | 9/10 | 6/6 |
-| baseline: description only (first SEP-3452 draft) | 8/8 | 10/18 | 6/10 | 0/6 |
+| reference (this repo) | 9/9 | 18/18 | 10/10 | 6/6 |
+| [Latch](https://github.com/purysho/Latch) `de954a8` | 7/9 | 18/18 | 9/10 | 6/6 |
+| baseline: raw-bytes SHA-256 | 0/9 | 18/18 | 10/10 | 6/6 |
+| baseline: `json.dumps(sort_keys=True)` | 6/9 | 18/18 | 9/10 | 6/6 |
+| baseline: description only (first SEP-3452 draft) | 9/9 | 10/18 | 6/10 | 0/6 |
 
 Two findings stand out. A description-only pin misses every schema and annotation
 change, including instructions hidden in a *parameter's* description. And any pin built
@@ -91,7 +91,7 @@ where a reject is expected.
   ECMAScript itself (`scripts/gen_es_numbers.mjs`), and 3,000 random values compared with
   the `rfc8785` package.
 - `rust/` has its own JSON parser and serializer (no serde in the digest path) and
-  reproduces all 264 known answers, the same reject codes, the same numbers and the RFC
+  reproduces all 270 known answers, the same reject codes, the same numbers and the RFC
   test data.
 - `scripts/gen_vectors.py` refuses to write a vector whose hand-written expectation
   disagrees with the reference, and CI fails if `vectors/` is stale.
@@ -107,7 +107,7 @@ server, and the server command. See `runner/adapters/thirdparty.py`.
 
 ```
 SPEC.md                 digest draft: scopes, RFC 8785, reject rules, open questions
-vectors/                44 vectors + index.json (generated; do not edit by hand)
+vectors/                45 vectors + index.json (generated; do not edit by hand)
 scripts/                vector generator, ECMAScript number fixture generator
 python/                 reference implementation + tests
 rust/                   independent implementation + tests
