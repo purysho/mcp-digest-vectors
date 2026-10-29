@@ -1,0 +1,72 @@
+{
+  "version": "mcp-tool-digest/v1-draft",
+  "id": "eq-negative-zero",
+  "category": "equivalence",
+  "question": "Q2",
+  "title": "Minimum written as 0 vs -0.0",
+  "why": "RFC 8785 serializes negative zero as 0.",
+  "before": "{\"tools\":[{\"name\":\"read_invoice\",\"title\":\"Read invoice\",\"description\":\"Read an invoice 📄 by its identifier and return the parsed fields.\",\"inputSchema\":{\"type\":\"object\",\"properties\":{\"invoice_id\":{\"type\":\"string\",\"description\":\"Invoice identifier, e.g. INV-1042.\"},\"include_lines\":{\"type\":\"boolean\",\"default\":false}},\"required\":[\"invoice_id\"],\"additionalProperties\":false},\"outputSchema\":{\"type\":\"object\",\"properties\":{\"total\":{\"type\":\"number\"},\"currency\":{\"type\":\"string\"}}},\"annotations\":{\"readOnlyHint\":true,\"openWorldHint\":false},\"_meta\":{\"ui\":{\"resourceUri\":\"ui://invoices/view\"}}},{\"name\":\"send_email\",\"description\":\"Send an email to the given recipients.\",\"inputSchema\":{\"type\":\"object\",\"properties\":{\"to\":{\"type\":\"array\",\"items\":{\"type\":\"string\"}},\"subject\":{\"type\":\"string\",\"maxLength\":200},\"body\":{\"type\":\"string\"},\"priority\":{\"type\":\"string\",\"enum\":[\"low\",\"normal\"],\"default\":\"normal\"}},\"required\":[\"to\",\"subject\",\"body\"]},\"annotations\":{\"readOnlyHint\":false,\"destructiveHint\":false,\"openWorldHint\":true}},{\"name\":\"search_docs\",\"description\":\"Search the team's documentation, including the Café wiki. Returns at most 20 results.\",\"inputSchema\":{\"type\":\"object\",\"properties\":{\"query\":{\"type\":\"string\"},\"limit\":{\"type\":\"integer\",\"minimum\":0,\"maximum\":20}},\"required\":[\"query\"]},\"icons\":[{\"src\":\"https://docs.example.com/icon.png\",\"mimeType\":\"image/png\"}]}]}",
+  "after": "{\"tools\":[{\"name\":\"read_invoice\",\"title\":\"Read invoice\",\"description\":\"Read an invoice 📄 by its identifier and return the parsed fields.\",\"inputSchema\":{\"type\":\"object\",\"properties\":{\"invoice_id\":{\"type\":\"string\",\"description\":\"Invoice identifier, e.g. INV-1042.\"},\"include_lines\":{\"type\":\"boolean\",\"default\":false}},\"required\":[\"invoice_id\"],\"additionalProperties\":false},\"outputSchema\":{\"type\":\"object\",\"properties\":{\"total\":{\"type\":\"number\"},\"currency\":{\"type\":\"string\"}}},\"annotations\":{\"readOnlyHint\":true,\"openWorldHint\":false},\"_meta\":{\"ui\":{\"resourceUri\":\"ui://invoices/view\"}}},{\"name\":\"send_email\",\"description\":\"Send an email to the given recipients.\",\"inputSchema\":{\"type\":\"object\",\"properties\":{\"to\":{\"type\":\"array\",\"items\":{\"type\":\"string\"}},\"subject\":{\"type\":\"string\",\"maxLength\":200},\"body\":{\"type\":\"string\"},\"priority\":{\"type\":\"string\",\"enum\":[\"low\",\"normal\"],\"default\":\"normal\"}},\"required\":[\"to\",\"subject\",\"body\"]},\"annotations\":{\"readOnlyHint\":false,\"destructiveHint\":false,\"openWorldHint\":true}},{\"name\":\"search_docs\",\"description\":\"Search the team's documentation, including the Café wiki. Returns at most 20 results.\",\"inputSchema\":{\"type\":\"object\",\"properties\":{\"query\":{\"type\":\"string\"},\"limit\":{\"type\":\"integer\",\"minimum\":-0.0,\"maximum\":20}},\"required\":[\"query\"]},\"icons\":[{\"src\":\"https://docs.example.com/icon.png\",\"mimeType\":\"image/png\"}]}]}",
+  "expect": {
+    "desc": "same",
+    "four-field": "same",
+    "full": "same"
+  },
+  "security": "unchanged",
+  "known_answers": {
+    "desc": {
+      "before": {
+        "set": "sha256:269ff1439b0e115cbb28d31169b465c7cab4211f98a1ddb7c2c02f2d795f006c",
+        "tools": {
+          "read_invoice": "sha256:eae9c9f6c4a67df723bc820fd49e9eb2b2dbf9451b2f5b94517c32f9f288efb7",
+          "search_docs": "sha256:98356b406315675efebbdd9c4da507f4f20fee91d4f1e2382a5e6ac23e17f599",
+          "send_email": "sha256:9d4bfef900d38dfcb6a28b1aa5b2259a7028f7b900ff2d3947a795e3ec6e83df"
+        }
+      },
+      "after": {
+        "set": "sha256:269ff1439b0e115cbb28d31169b465c7cab4211f98a1ddb7c2c02f2d795f006c",
+        "tools": {
+          "read_invoice": "sha256:eae9c9f6c4a67df723bc820fd49e9eb2b2dbf9451b2f5b94517c32f9f288efb7",
+          "search_docs": "sha256:98356b406315675efebbdd9c4da507f4f20fee91d4f1e2382a5e6ac23e17f599",
+          "send_email": "sha256:9d4bfef900d38dfcb6a28b1aa5b2259a7028f7b900ff2d3947a795e3ec6e83df"
+        }
+      }
+    },
+    "four-field": {
+      "before": {
+        "set": "sha256:30b5c17bd4c7f0b17bba5484aa074933b946a56eacf420609ccf9f2e6583fc74",
+        "tools": {
+          "read_invoice": "sha256:2699d94522aecd5c9effac64fc12b9eb04b0595435162af1ebaf32f63d87bca8",
+          "search_docs": "sha256:e0856e8218b359794048035769b2108cbe56ac230af3f8e8e09418cf03aaf5c7",
+          "send_email": "sha256:f82b45fef98b3a0259aafe2a94b98db8854676d9b51ea625ab287e899cff4904"
+        }
+      },
+      "after": {
+        "set": "sha256:30b5c17bd4c7f0b17bba5484aa074933b946a56eacf420609ccf9f2e6583fc74",
+        "tools": {
+          "read_invoice": "sha256:2699d94522aecd5c9effac64fc12b9eb04b0595435162af1ebaf32f63d87bca8",
+          "search_docs": "sha256:e0856e8218b359794048035769b2108cbe56ac230af3f8e8e09418cf03aaf5c7",
+          "send_email": "sha256:f82b45fef98b3a0259aafe2a94b98db8854676d9b51ea625ab287e899cff4904"
+        }
+      }
+    },
+    "full": {
+      "before": {
+        "set": "sha256:c042ec3eabe2e7367499ca9a20749cb6418f514aefbdbd1a88e4942fca999c00",
+        "tools": {
+          "read_invoice": "sha256:0be495c33bc6f0e256dbdaaed1b9cdcb85db024f8d6ad79b47dc9049ea566795",
+          "search_docs": "sha256:2361b3033722cebd3ef96d2d655bee7e130ee74811ee96e5c61eb5b170ed8a55",
+          "send_email": "sha256:8c684c2c992a782ab7cdd4be3edb5e8f902313a7c3c23a18877237656c0c84e0"
+        }
+      },
+      "after": {
+        "set": "sha256:c042ec3eabe2e7367499ca9a20749cb6418f514aefbdbd1a88e4942fca999c00",
+        "tools": {
+          "read_invoice": "sha256:0be495c33bc6f0e256dbdaaed1b9cdcb85db024f8d6ad79b47dc9049ea566795",
+          "search_docs": "sha256:2361b3033722cebd3ef96d2d655bee7e130ee74811ee96e5c61eb5b170ed8a55",
+          "send_email": "sha256:8c684c2c992a782ab7cdd4be3edb5e8f902313a7c3c23a18877237656c0c84e0"
+        }
+      }
+    }
+  }
+}

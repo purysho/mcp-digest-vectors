@@ -1,0 +1,57 @@
+{
+  "version": "mcp-tool-digest/v1-draft",
+  "id": "reject-invalid-utf8",
+  "category": "reject",
+  "question": "Q3",
+  "title": "Invalid UTF-8 byte (0xFF) inside a description",
+  "why": "Decoders replace, drop or reject invalid bytes differently. Stored as after_b64.",
+  "before": "{\"tools\":[{\"name\":\"read_invoice\",\"title\":\"Read invoice\",\"description\":\"Read an invoice 📄 by its identifier and return the parsed fields.\",\"inputSchema\":{\"type\":\"object\",\"properties\":{\"invoice_id\":{\"type\":\"string\",\"description\":\"Invoice identifier, e.g. INV-1042.\"},\"include_lines\":{\"type\":\"boolean\",\"default\":false}},\"required\":[\"invoice_id\"],\"additionalProperties\":false},\"outputSchema\":{\"type\":\"object\",\"properties\":{\"total\":{\"type\":\"number\"},\"currency\":{\"type\":\"string\"}}},\"annotations\":{\"readOnlyHint\":true,\"openWorldHint\":false},\"_meta\":{\"ui\":{\"resourceUri\":\"ui://invoices/view\"}}},{\"name\":\"send_email\",\"description\":\"Send an email to the given recipients.\",\"inputSchema\":{\"type\":\"object\",\"properties\":{\"to\":{\"type\":\"array\",\"items\":{\"type\":\"string\"}},\"subject\":{\"type\":\"string\",\"maxLength\":200},\"body\":{\"type\":\"string\"},\"priority\":{\"type\":\"string\",\"enum\":[\"low\",\"normal\"],\"default\":\"normal\"}},\"required\":[\"to\",\"subject\",\"body\"]},\"annotations\":{\"readOnlyHint\":false,\"destructiveHint\":false,\"openWorldHint\":true}},{\"name\":\"search_docs\",\"description\":\"Search the team's documentation, including the Café wiki. Returns at most 20 results.\",\"inputSchema\":{\"type\":\"object\",\"properties\":{\"query\":{\"type\":\"string\"},\"limit\":{\"type\":\"integer\",\"minimum\":1,\"maximum\":20}},\"required\":[\"query\"]},\"icons\":[{\"src\":\"https://docs.example.com/icon.png\",\"mimeType\":\"image/png\"}]}]}",
+  "after_b64": "eyJ0b29scyI6W3sibmFtZSI6InJlYWRfaW52b2ljZSIsInRpdGxlIjoiUmVhZCBpbnZvaWNlIiwiZGVzY3JpcHRpb24iOiJSZWFkIGFuIGludm9pY2Ug8J+ThCBieSBpdHMgaWRlbnRpZmllciBhbmQgcmV0dXJuIHRoZSBwYXJzZWQgZmllbGRzLiIsImlucHV0U2NoZW1hIjp7InR5cGUiOiJvYmplY3QiLCJwcm9wZXJ0aWVzIjp7Imludm9pY2VfaWQiOnsidHlwZSI6InN0cmluZyIsImRlc2NyaXB0aW9uIjoiSW52b2ljZSBpZGVudGlmaWVyLCBlLmcuIElOVi0xMDQyLiJ9LCJpbmNsdWRlX2xpbmVzIjp7InR5cGUiOiJib29sZWFuIiwiZGVmYXVsdCI6ZmFsc2V9fSwicmVxdWlyZWQiOlsiaW52b2ljZV9pZCJdLCJhZGRpdGlvbmFsUHJvcGVydGllcyI6ZmFsc2V9LCJvdXRwdXRTY2hlbWEiOnsidHlwZSI6Im9iamVjdCIsInByb3BlcnRpZXMiOnsidG90YWwiOnsidHlwZSI6Im51bWJlciJ9LCJjdXJyZW5jeSI6eyJ0eXBlIjoic3RyaW5nIn19fSwiYW5ub3RhdGlvbnMiOnsicmVhZE9ubHlIaW50Ijp0cnVlLCJvcGVuV29ybGRIaW50IjpmYWxzZX0sIl9tZXRhIjp7InVpIjp7InJlc291cmNlVXJpIjoidWk6Ly9pbnZvaWNlcy92aWV3In19fSx7Im5hbWUiOiJzZW5kX2VtYWlsIiwiZGVzY3JpcHRpb24iOiJTZW5kIGFuIGVtYWlsIHRvIHRoZSBnaXZlbiByZWNpcGllbnRzLv8iLCJpbnB1dFNjaGVtYSI6eyJ0eXBlIjoib2JqZWN0IiwicHJvcGVydGllcyI6eyJ0byI6eyJ0eXBlIjoiYXJyYXkiLCJpdGVtcyI6eyJ0eXBlIjoic3RyaW5nIn19LCJzdWJqZWN0Ijp7InR5cGUiOiJzdHJpbmciLCJtYXhMZW5ndGgiOjIwMH0sImJvZHkiOnsidHlwZSI6InN0cmluZyJ9LCJwcmlvcml0eSI6eyJ0eXBlIjoic3RyaW5nIiwiZW51bSI6WyJsb3ciLCJub3JtYWwiXSwiZGVmYXVsdCI6Im5vcm1hbCJ9fSwicmVxdWlyZWQiOlsidG8iLCJzdWJqZWN0IiwiYm9keSJdfSwiYW5ub3RhdGlvbnMiOnsicmVhZE9ubHlIaW50IjpmYWxzZSwiZGVzdHJ1Y3RpdmVIaW50IjpmYWxzZSwib3BlbldvcmxkSGludCI6dHJ1ZX19LHsibmFtZSI6InNlYXJjaF9kb2NzIiwiZGVzY3JpcHRpb24iOiJTZWFyY2ggdGhlIHRlYW0ncyBkb2N1bWVudGF0aW9uLCBpbmNsdWRpbmcgdGhlIENhZsOpIHdpa2kuIFJldHVybnMgYXQgbW9zdCAyMCByZXN1bHRzLiIsImlucHV0U2NoZW1hIjp7InR5cGUiOiJvYmplY3QiLCJwcm9wZXJ0aWVzIjp7InF1ZXJ5Ijp7InR5cGUiOiJzdHJpbmcifSwibGltaXQiOnsidHlwZSI6ImludGVnZXIiLCJtaW5pbXVtIjoxLCJtYXhpbXVtIjoyMH19LCJyZXF1aXJlZCI6WyJxdWVyeSJdfSwiaWNvbnMiOlt7InNyYyI6Imh0dHBzOi8vZG9jcy5leGFtcGxlLmNvbS9pY29uLnBuZyIsIm1pbWVUeXBlIjoiaW1hZ2UvcG5nIn1dfV19",
+  "expect": {
+    "desc": "reject",
+    "four-field": "reject",
+    "full": "reject"
+  },
+  "security": "changed-or-error",
+  "known_answers": {
+    "desc": {
+      "before": {
+        "set": "sha256:269ff1439b0e115cbb28d31169b465c7cab4211f98a1ddb7c2c02f2d795f006c",
+        "tools": {
+          "read_invoice": "sha256:eae9c9f6c4a67df723bc820fd49e9eb2b2dbf9451b2f5b94517c32f9f288efb7",
+          "search_docs": "sha256:98356b406315675efebbdd9c4da507f4f20fee91d4f1e2382a5e6ac23e17f599",
+          "send_email": "sha256:9d4bfef900d38dfcb6a28b1aa5b2259a7028f7b900ff2d3947a795e3ec6e83df"
+        }
+      },
+      "after": {
+        "reject": "invalid-utf8"
+      }
+    },
+    "four-field": {
+      "before": {
+        "set": "sha256:8fefab1587e6cca6075cca85a4f41145d8d769bea5da96a9175dd7e17ef9ff9b",
+        "tools": {
+          "read_invoice": "sha256:2699d94522aecd5c9effac64fc12b9eb04b0595435162af1ebaf32f63d87bca8",
+          "search_docs": "sha256:78c43cc2617b1c5380410f8ecda64790a1e69a5c7a1977239e68455732b7ed7f",
+          "send_email": "sha256:f82b45fef98b3a0259aafe2a94b98db8854676d9b51ea625ab287e899cff4904"
+        }
+      },
+      "after": {
+        "reject": "invalid-utf8"
+      }
+    },
+    "full": {
+      "before": {
+        "set": "sha256:bf0a768e0ca303115890c7bf8922a53cf4828e5e8b4670ffeb9278b36145a19a",
+        "tools": {
+          "read_invoice": "sha256:0be495c33bc6f0e256dbdaaed1b9cdcb85db024f8d6ad79b47dc9049ea566795",
+          "search_docs": "sha256:6f59d7e9c6e4d57d6b34fd0e59857e126a4b0342f2090fcc07eddb3966795496",
+          "send_email": "sha256:8c684c2c992a782ab7cdd4be3edb5e8f902313a7c3c23a18877237656c0c84e0"
+        }
+      },
+      "after": {
+        "reject": "invalid-utf8"
+      }
+    }
+  }
+}

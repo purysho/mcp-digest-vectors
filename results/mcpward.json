@@ -1,0 +1,7 @@
+{
+  "adapter": "mcpward",
+  "description": "mcpward baseline/diff, drift only, fail_on: low (written from docs, not yet run)",
+  "url": "https://github.com/TsvetanG2/mcpward",
+  "available": false,
+  "reason": "`mcpward` not on PATH; npm install -g mcpward (Node 22+)"
+}

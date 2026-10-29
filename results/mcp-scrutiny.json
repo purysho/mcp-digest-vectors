@@ -1,0 +1,7 @@
+{
+  "adapter": "mcp-scrutiny",
+  "description": "mcp-scrutiny baseline/scan, drift findings only (written from docs, not yet run)",
+  "url": "https://github.com/bryand410/mcp-scrutiny",
+  "available": false,
+  "reason": "`mcp-scrutiny` not on PATH; pip install mcp-scrutiny (Python 3.11+)"
+}

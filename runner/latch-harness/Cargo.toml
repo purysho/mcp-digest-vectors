@@ -1,0 +1,15 @@
+[package]
+name = "latch-harness"
+version = "0.1.0"
+edition = "2021"
+publish = false
+description = "Drives Latch's MCP tool registry with mcp-digest-vectors"
+
+# Pinned to the Latch commit the published results were produced with.
+[dependencies]
+latch-mcp = { git = "https://github.com/purysho/Latch", rev = "de954a861cd12a87ea7e5b76f8d55594924e244c" }
+latch-audit = { git = "https://github.com/purysho/Latch", rev = "de954a861cd12a87ea7e5b76f8d55594924e244c" }
+serde_json = "1"
+base64 = "0.22"
+
+[workspace]

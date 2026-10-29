@@ -1,0 +1,364 @@
+{
+  "adapter": "reference",
+  "description": "mcp-tool-digest/v1-draft, full profile (this repo)",
+  "url": "https://github.com/purysho/mcp-digest-vectors",
+  "available": true,
+  "version": "builtin",
+  "control": "unchanged",
+  "control_detail": "",
+  "seconds": 3.4,
+  "rows": [
+    {
+      "id": "eq-key-order",
+      "category": "equivalence",
+      "security": "unchanged",
+      "outcome": "unchanged",
+      "verdict": "pass",
+      "detail": ""
+    },
+    {
+      "id": "eq-whitespace",
+      "category": "equivalence",
+      "security": "unchanged",
+      "outcome": "unchanged",
+      "verdict": "pass",
+      "detail": ""
+    },
+    {
+      "id": "eq-number-forms",
+      "category": "equivalence",
+      "security": "unchanged",
+      "outcome": "unchanged",
+      "verdict": "pass",
+      "detail": ""
+    },
+    {
+      "id": "eq-negative-zero",
+      "category": "equivalence",
+      "security": "unchanged",
+      "outcome": "unchanged",
+      "verdict": "pass",
+      "detail": ""
+    },
+    {
+      "id": "eq-unicode-escapes",
+      "category": "equivalence",
+      "security": "unchanged",
+      "outcome": "unchanged",
+      "verdict": "pass",
+      "detail": ""
+    },
+    {
+      "id": "eq-solidus-escape",
+      "category": "equivalence",
+      "security": "unchanged",
+      "outcome": "unchanged",
+      "verdict": "pass",
+      "detail": ""
+    },
+    {
+      "id": "eq-control-escape",
+      "category": "equivalence",
+      "security": "unchanged",
+      "outcome": "unchanged",
+      "verdict": "pass",
+      "detail": ""
+    },
+    {
+      "id": "eq-tool-order",
+      "category": "equivalence",
+      "security": "unchanged",
+      "outcome": "unchanged",
+      "verdict": "pass",
+      "detail": ""
+    },
+    {
+      "id": "drift-description-appended",
+      "category": "drift",
+      "security": "changed",
+      "outcome": "changed",
+      "verdict": "pass",
+      "detail": ""
+    },
+    {
+      "id": "drift-zero-width",
+      "category": "drift",
+      "security": "changed",
+      "outcome": "changed",
+      "verdict": "pass",
+      "detail": ""
+    },
+    {
+      "id": "drift-homoglyph",
+      "category": "drift",
+      "security": "changed",
+      "outcome": "changed",
+      "verdict": "pass",
+      "detail": ""
+    },
+    {
+      "id": "drift-trailing-space",
+      "category": "drift",
+      "security": "changed",
+      "outcome": "changed",
+      "verdict": "pass",
+      "detail": ""
+    },
+    {
+      "id": "drift-unicode-nfd",
+      "category": "drift",
+      "security": "changed",
+      "outcome": "changed",
+      "verdict": "pass",
+      "detail": ""
+    },
+    {
+      "id": "drift-ansi-escape",
+      "category": "drift",
+      "security": "changed",
+      "outcome": "changed",
+      "verdict": "pass",
+      "detail": ""
+    },
+    {
+      "id": "drift-description-absent-to-empty",
+      "category": "drift",
+      "security": "changed",
+      "outcome": "changed",
+      "verdict": "pass",
+      "detail": ""
+    },
+    {
+      "id": "drift-tool-added",
+      "category": "drift",
+      "security": "changed",
+      "outcome": "changed",
+      "verdict": "pass",
+      "detail": ""
+    },
+    {
+      "id": "drift-tool-removed",
+      "category": "drift",
+      "security": "changed",
+      "outcome": "changed",
+      "verdict": "pass",
+      "detail": ""
+    },
+    {
+      "id": "drift-tool-renamed",
+      "category": "drift",
+      "security": "changed",
+      "outcome": "changed",
+      "verdict": "pass",
+      "detail": ""
+    },
+    {
+      "id": "drift-schema-property-description",
+      "category": "drift",
+      "security": "changed",
+      "outcome": "changed",
+      "verdict": "pass",
+      "detail": ""
+    },
+    {
+      "id": "drift-schema-required-added",
+      "category": "drift",
+      "security": "changed",
+      "outcome": "changed",
+      "verdict": "pass",
+      "detail": ""
+    },
+    {
+      "id": "drift-schema-default-changed",
+      "category": "drift",
+      "security": "changed",
+      "outcome": "changed",
+      "verdict": "pass",
+      "detail": ""
+    },
+    {
+      "id": "drift-schema-enum-widened",
+      "category": "drift",
+      "security": "changed",
+      "outcome": "changed",
+      "verdict": "pass",
+      "detail": ""
+    },
+    {
+      "id": "drift-schema-additional-properties",
+      "category": "drift",
+      "security": "changed",
+      "outcome": "changed",
+      "verdict": "pass",
+      "detail": ""
+    },
+    {
+      "id": "drift-annotation-readonly-flip",
+      "category": "drift",
+      "security": "changed",
+      "outcome": "changed",
+      "verdict": "pass",
+      "detail": ""
+    },
+    {
+      "id": "drift-annotation-destructive-flip",
+      "category": "drift",
+      "security": "changed",
+      "outcome": "changed",
+      "verdict": "pass",
+      "detail": ""
+    },
+    {
+      "id": "drift-annotations-removed",
+      "category": "drift",
+      "security": "changed",
+      "outcome": "changed",
+      "verdict": "pass",
+      "detail": ""
+    },
+    {
+      "id": "drift-annotations-absent-to-empty",
+      "category": "drift",
+      "security": "informational",
+      "outcome": "changed",
+      "verdict": "info",
+      "detail": ""
+    },
+    {
+      "id": "scope-title-changed",
+      "category": "scope",
+      "security": "informational",
+      "outcome": "changed",
+      "verdict": "info",
+      "detail": ""
+    },
+    {
+      "id": "scope-output-schema-changed",
+      "category": "scope",
+      "security": "informational",
+      "outcome": "changed",
+      "verdict": "info",
+      "detail": ""
+    },
+    {
+      "id": "scope-meta-ui-resource",
+      "category": "scope",
+      "security": "informational",
+      "outcome": "changed",
+      "verdict": "info",
+      "detail": ""
+    },
+    {
+      "id": "scope-meta-volatile",
+      "category": "scope",
+      "security": "informational",
+      "outcome": "changed",
+      "verdict": "info",
+      "detail": ""
+    },
+    {
+      "id": "scope-icons-changed",
+      "category": "scope",
+      "security": "informational",
+      "outcome": "changed",
+      "verdict": "info",
+      "detail": ""
+    },
+    {
+      "id": "scope-unknown-member",
+      "category": "scope",
+      "security": "informational",
+      "outcome": "changed",
+      "verdict": "info",
+      "detail": ""
+    },
+    {
+      "id": "reject-duplicate-key-evil-first",
+      "category": "reject",
+      "security": "changed-or-error",
+      "outcome": "error",
+      "verdict": "pass",
+      "detail": "RuntimeError: rejected: duplicate-key"
+    },
+    {
+      "id": "reject-duplicate-key-evil-last",
+      "category": "reject",
+      "security": "changed-or-error",
+      "outcome": "error",
+      "verdict": "pass",
+      "detail": "RuntimeError: rejected: duplicate-key"
+    },
+    {
+      "id": "reject-duplicate-key-nested",
+      "category": "reject",
+      "security": "changed-or-error",
+      "outcome": "error",
+      "verdict": "pass",
+      "detail": "RuntimeError: rejected: duplicate-key"
+    },
+    {
+      "id": "reject-duplicate-tool-name",
+      "category": "reject",
+      "security": "changed-or-error",
+      "outcome": "error",
+      "verdict": "pass",
+      "detail": "RuntimeError: rejected: duplicate-tool-name"
+    },
+    {
+      "id": "reject-lone-surrogate",
+      "category": "reject",
+      "security": "changed-or-error",
+      "outcome": "error",
+      "verdict": "pass",
+      "detail": "RuntimeError: rejected: lone-surrogate"
+    },
+    {
+      "id": "reject-nan",
+      "category": "reject",
+      "security": "changed-or-error",
+      "outcome": "error",
+      "verdict": "pass",
+      "detail": "RuntimeError: rejected: invalid-json"
+    },
+    {
+      "id": "reject-number-overflow",
+      "category": "reject",
+      "security": "changed-or-error",
+      "outcome": "error",
+      "verdict": "pass",
+      "detail": "RuntimeError: rejected: number-out-of-range"
+    },
+    {
+      "id": "reject-missing-name",
+      "category": "reject",
+      "security": "changed-or-error",
+      "outcome": "error",
+      "verdict": "pass",
+      "detail": "RuntimeError: rejected: bad-tool-name"
+    },
+    {
+      "id": "reject-not-a-tool-list",
+      "category": "reject",
+      "security": "changed-or-error",
+      "outcome": "error",
+      "verdict": "pass",
+      "detail": "RuntimeError: rejected: not-a-tool-list"
+    },
+    {
+      "id": "reject-invalid-utf8",
+      "category": "reject",
+      "security": "changed-or-error",
+      "outcome": "error",
+      "verdict": "pass",
+      "detail": "RuntimeError: rejected: invalid-utf8"
+    },
+    {
+      "id": "limit-int-beyond-2-53",
+      "category": "limitation",
+      "security": "informational",
+      "outcome": "unchanged",
+      "verdict": "info",
+      "detail": ""
+    }
+  ]
+}

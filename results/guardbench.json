@@ -1,0 +1,7 @@
+{
+  "adapter": "guardbench",
+  "description": "guardbench inspect with pins (written from docs, not yet run)",
+  "url": "https://github.com/Manishmaurya89/mcp-guardbench",
+  "available": false,
+  "reason": "`guardbench` not on PATH; pip install mcp-guardbench"
+}

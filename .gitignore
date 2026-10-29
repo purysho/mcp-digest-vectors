@@ -1,0 +1,7 @@
+target/
+Cargo.lock.bak
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+.venv/

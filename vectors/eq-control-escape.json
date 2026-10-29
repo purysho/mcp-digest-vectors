@@ -1,0 +1,72 @@
+{
+  "version": "mcp-tool-digest/v1-draft",
+  "id": "eq-control-escape",
+  "category": "equivalence",
+  "question": "Q2",
+  "title": "A tab in a description written as \\t vs \\u0009",
+  "why": "Two escapes for the same character.",
+  "before": "{\"tools\":[{\"name\":\"read_invoice\",\"title\":\"Read invoice\",\"description\":\"Read an invoice 📄 by its identifier and return the parsed fields.\",\"inputSchema\":{\"type\":\"object\",\"properties\":{\"invoice_id\":{\"type\":\"string\",\"description\":\"Invoice identifier, e.g. INV-1042.\"},\"include_lines\":{\"type\":\"boolean\",\"default\":false}},\"required\":[\"invoice_id\"],\"additionalProperties\":false},\"outputSchema\":{\"type\":\"object\",\"properties\":{\"total\":{\"type\":\"number\"},\"currency\":{\"type\":\"string\"}}},\"annotations\":{\"readOnlyHint\":true,\"openWorldHint\":false},\"_meta\":{\"ui\":{\"resourceUri\":\"ui://invoices/view\"}}},{\"name\":\"send_email\",\"description\":\"Send an email\\tto the given recipients.\",\"inputSchema\":{\"type\":\"object\",\"properties\":{\"to\":{\"type\":\"array\",\"items\":{\"type\":\"string\"}},\"subject\":{\"type\":\"string\",\"maxLength\":200},\"body\":{\"type\":\"string\"},\"priority\":{\"type\":\"string\",\"enum\":[\"low\",\"normal\"],\"default\":\"normal\"}},\"required\":[\"to\",\"subject\",\"body\"]},\"annotations\":{\"readOnlyHint\":false,\"destructiveHint\":false,\"openWorldHint\":true}},{\"name\":\"search_docs\",\"description\":\"Search the team's documentation, including the Café wiki. Returns at most 20 results.\",\"inputSchema\":{\"type\":\"object\",\"properties\":{\"query\":{\"type\":\"string\"},\"limit\":{\"type\":\"integer\",\"minimum\":1,\"maximum\":20}},\"required\":[\"query\"]},\"icons\":[{\"src\":\"https://docs.example.com/icon.png\",\"mimeType\":\"image/png\"}]}]}",
+  "after": "{\"tools\":[{\"name\":\"read_invoice\",\"title\":\"Read invoice\",\"description\":\"Read an invoice 📄 by its identifier and return the parsed fields.\",\"inputSchema\":{\"type\":\"object\",\"properties\":{\"invoice_id\":{\"type\":\"string\",\"description\":\"Invoice identifier, e.g. INV-1042.\"},\"include_lines\":{\"type\":\"boolean\",\"default\":false}},\"required\":[\"invoice_id\"],\"additionalProperties\":false},\"outputSchema\":{\"type\":\"object\",\"properties\":{\"total\":{\"type\":\"number\"},\"currency\":{\"type\":\"string\"}}},\"annotations\":{\"readOnlyHint\":true,\"openWorldHint\":false},\"_meta\":{\"ui\":{\"resourceUri\":\"ui://invoices/view\"}}},{\"name\":\"send_email\",\"description\":\"Send an email\\u0009to the given recipients.\",\"inputSchema\":{\"type\":\"object\",\"properties\":{\"to\":{\"type\":\"array\",\"items\":{\"type\":\"string\"}},\"subject\":{\"type\":\"string\",\"maxLength\":200},\"body\":{\"type\":\"string\"},\"priority\":{\"type\":\"string\",\"enum\":[\"low\",\"normal\"],\"default\":\"normal\"}},\"required\":[\"to\",\"subject\",\"body\"]},\"annotations\":{\"readOnlyHint\":false,\"destructiveHint\":false,\"openWorldHint\":true}},{\"name\":\"search_docs\",\"description\":\"Search the team's documentation, including the Café wiki. Returns at most 20 results.\",\"inputSchema\":{\"type\":\"object\",\"properties\":{\"query\":{\"type\":\"string\"},\"limit\":{\"type\":\"integer\",\"minimum\":1,\"maximum\":20}},\"required\":[\"query\"]},\"icons\":[{\"src\":\"https://docs.example.com/icon.png\",\"mimeType\":\"image/png\"}]}]}",
+  "expect": {
+    "desc": "same",
+    "four-field": "same",
+    "full": "same"
+  },
+  "security": "unchanged",
+  "known_answers": {
+    "desc": {
+      "before": {
+        "set": "sha256:f03281c3a1adc700538df17cfc7614bbd5ce96d77296f3d54650732b51d11d13",
+        "tools": {
+          "read_invoice": "sha256:eae9c9f6c4a67df723bc820fd49e9eb2b2dbf9451b2f5b94517c32f9f288efb7",
+          "search_docs": "sha256:98356b406315675efebbdd9c4da507f4f20fee91d4f1e2382a5e6ac23e17f599",
+          "send_email": "sha256:4938576e76c5ca8d9b44620b31156d4cafb7805cf0ee346203ec425302d6ed8b"
+        }
+      },
+      "after": {
+        "set": "sha256:f03281c3a1adc700538df17cfc7614bbd5ce96d77296f3d54650732b51d11d13",
+        "tools": {
+          "read_invoice": "sha256:eae9c9f6c4a67df723bc820fd49e9eb2b2dbf9451b2f5b94517c32f9f288efb7",
+          "search_docs": "sha256:98356b406315675efebbdd9c4da507f4f20fee91d4f1e2382a5e6ac23e17f599",
+          "send_email": "sha256:4938576e76c5ca8d9b44620b31156d4cafb7805cf0ee346203ec425302d6ed8b"
+        }
+      }
+    },
+    "four-field": {
+      "before": {
+        "set": "sha256:a3d07033b73f20b5282208ad4f3d73eb6a4e01af7ca04935eda588a897db7f9a",
+        "tools": {
+          "read_invoice": "sha256:2699d94522aecd5c9effac64fc12b9eb04b0595435162af1ebaf32f63d87bca8",
+          "search_docs": "sha256:78c43cc2617b1c5380410f8ecda64790a1e69a5c7a1977239e68455732b7ed7f",
+          "send_email": "sha256:dd968651c84064129d473b97ba7bf68f953c35a844352b13287bb4127be02f2a"
+        }
+      },
+      "after": {
+        "set": "sha256:a3d07033b73f20b5282208ad4f3d73eb6a4e01af7ca04935eda588a897db7f9a",
+        "tools": {
+          "read_invoice": "sha256:2699d94522aecd5c9effac64fc12b9eb04b0595435162af1ebaf32f63d87bca8",
+          "search_docs": "sha256:78c43cc2617b1c5380410f8ecda64790a1e69a5c7a1977239e68455732b7ed7f",
+          "send_email": "sha256:dd968651c84064129d473b97ba7bf68f953c35a844352b13287bb4127be02f2a"
+        }
+      }
+    },
+    "full": {
+      "before": {
+        "set": "sha256:69024a67d4eebad64971553db11424f9e15df4fa5e785a25264af096c5f8f492",
+        "tools": {
+          "read_invoice": "sha256:0be495c33bc6f0e256dbdaaed1b9cdcb85db024f8d6ad79b47dc9049ea566795",
+          "search_docs": "sha256:6f59d7e9c6e4d57d6b34fd0e59857e126a4b0342f2090fcc07eddb3966795496",
+          "send_email": "sha256:99c17f15eed198e49c2bf41cd9026f41a24c1510cfa190c24b3204fc31db4ef5"
+        }
+      },
+      "after": {
+        "set": "sha256:69024a67d4eebad64971553db11424f9e15df4fa5e785a25264af096c5f8f492",
+        "tools": {
+          "read_invoice": "sha256:0be495c33bc6f0e256dbdaaed1b9cdcb85db024f8d6ad79b47dc9049ea566795",
+          "search_docs": "sha256:6f59d7e9c6e4d57d6b34fd0e59857e126a4b0342f2090fcc07eddb3966795496",
+          "send_email": "sha256:99c17f15eed198e49c2bf41cd9026f41a24c1510cfa190c24b3204fc31db4ef5"
+        }
+      }
+    }
+  }
+}

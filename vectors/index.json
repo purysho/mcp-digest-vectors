@@ -1,0 +1,534 @@
+{
+  "version": "mcp-tool-digest/v1-draft",
+  "count": 44,
+  "vectors": [
+    {
+      "id": "eq-key-order",
+      "category": "equivalence",
+      "question": "Q2",
+      "title": "Object members in reverse order at every depth",
+      "expect": {
+        "desc": "same",
+        "four-field": "same",
+        "full": "same"
+      },
+      "security": "unchanged"
+    },
+    {
+      "id": "eq-whitespace",
+      "category": "equivalence",
+      "question": "Q2",
+      "title": "Insignificant whitespace added between tokens",
+      "expect": {
+        "desc": "same",
+        "four-field": "same",
+        "full": "same"
+      },
+      "security": "unchanged"
+    },
+    {
+      "id": "eq-number-forms",
+      "category": "equivalence",
+      "question": "Q2",
+      "title": "Same numbers written differently (20 vs 2e1, 1 vs 1.0, 200 vs 2.00E+2)",
+      "expect": {
+        "desc": "same",
+        "four-field": "same",
+        "full": "same"
+      },
+      "security": "unchanged"
+    },
+    {
+      "id": "eq-negative-zero",
+      "category": "equivalence",
+      "question": "Q2",
+      "title": "Minimum written as 0 vs -0.0",
+      "expect": {
+        "desc": "same",
+        "four-field": "same",
+        "full": "same"
+      },
+      "security": "unchanged"
+    },
+    {
+      "id": "eq-unicode-escapes",
+      "category": "equivalence",
+      "question": "Q2",
+      "title": "Non-ASCII text sent as \\u escapes (including a surrogate pair)",
+      "expect": {
+        "desc": "same",
+        "four-field": "same",
+        "full": "same"
+      },
+      "security": "unchanged"
+    },
+    {
+      "id": "eq-solidus-escape",
+      "category": "equivalence",
+      "question": "Q2",
+      "title": "Forward slashes escaped as \\/",
+      "expect": {
+        "desc": "same",
+        "four-field": "same",
+        "full": "same"
+      },
+      "security": "unchanged"
+    },
+    {
+      "id": "eq-control-escape",
+      "category": "equivalence",
+      "question": "Q2",
+      "title": "A tab in a description written as \\t vs \\u0009",
+      "expect": {
+        "desc": "same",
+        "four-field": "same",
+        "full": "same"
+      },
+      "security": "unchanged"
+    },
+    {
+      "id": "eq-tool-order",
+      "category": "equivalence",
+      "question": "Q2",
+      "title": "Tools listed in a different order",
+      "expect": {
+        "desc": "same",
+        "four-field": "same",
+        "full": "same"
+      },
+      "security": "unchanged"
+    },
+    {
+      "id": "drift-description-appended",
+      "category": "drift",
+      "question": "Q1",
+      "title": "Instruction appended to a description (classic rug pull)",
+      "expect": {
+        "desc": "differ",
+        "four-field": "differ",
+        "full": "differ"
+      },
+      "security": "changed"
+    },
+    {
+      "id": "drift-zero-width",
+      "category": "drift",
+      "question": "Q4",
+      "title": "Zero-width space inserted into a description",
+      "expect": {
+        "desc": "differ",
+        "four-field": "differ",
+        "full": "differ"
+      },
+      "security": "changed"
+    },
+    {
+      "id": "drift-homoglyph",
+      "category": "drift",
+      "question": "Q4",
+      "title": "Latin 'a' swapped for Cyrillic 'а' (U+0430) in a description",
+      "expect": {
+        "desc": "differ",
+        "four-field": "differ",
+        "full": "differ"
+      },
+      "security": "changed"
+    },
+    {
+      "id": "drift-trailing-space",
+      "category": "drift",
+      "question": "Q4",
+      "title": "One trailing space added to a description",
+      "expect": {
+        "desc": "differ",
+        "four-field": "differ",
+        "full": "differ"
+      },
+      "security": "changed"
+    },
+    {
+      "id": "drift-unicode-nfd",
+      "category": "drift",
+      "question": "Q4",
+      "title": "'é' (U+00E9) re-sent decomposed as 'e' + U+0301",
+      "expect": {
+        "desc": "differ",
+        "four-field": "differ",
+        "full": "differ"
+      },
+      "security": "changed"
+    },
+    {
+      "id": "drift-ansi-escape",
+      "category": "drift",
+      "question": "Q4",
+      "title": "ANSI 'conceal' escape (ESC[8m) hidden in a description",
+      "expect": {
+        "desc": "differ",
+        "four-field": "differ",
+        "full": "differ"
+      },
+      "security": "changed"
+    },
+    {
+      "id": "drift-description-absent-to-empty",
+      "category": "drift",
+      "question": "Q1",
+      "title": "A tool with no description gains an empty one",
+      "expect": {
+        "desc": "differ",
+        "four-field": "differ",
+        "full": "differ"
+      },
+      "security": "changed"
+    },
+    {
+      "id": "drift-tool-added",
+      "category": "drift",
+      "question": "Q1",
+      "title": "A new tool appears",
+      "expect": {
+        "desc": "differ",
+        "four-field": "differ",
+        "full": "differ"
+      },
+      "security": "changed"
+    },
+    {
+      "id": "drift-tool-removed",
+      "category": "drift",
+      "question": "Q1",
+      "title": "A tool disappears",
+      "expect": {
+        "desc": "differ",
+        "four-field": "differ",
+        "full": "differ"
+      },
+      "security": "changed"
+    },
+    {
+      "id": "drift-tool-renamed",
+      "category": "drift",
+      "question": "Q1",
+      "title": "A tool is renamed (search_docs -> search_documents)",
+      "expect": {
+        "desc": "differ",
+        "four-field": "differ",
+        "full": "differ"
+      },
+      "security": "changed"
+    },
+    {
+      "id": "drift-schema-property-description",
+      "category": "drift",
+      "question": "Q1",
+      "title": "Instruction hidden in a parameter's description",
+      "expect": {
+        "desc": "same",
+        "four-field": "differ",
+        "full": "differ"
+      },
+      "security": "changed"
+    },
+    {
+      "id": "drift-schema-required-added",
+      "category": "drift",
+      "question": "Q1",
+      "title": "A new required parameter",
+      "expect": {
+        "desc": "same",
+        "four-field": "differ",
+        "full": "differ"
+      },
+      "security": "changed"
+    },
+    {
+      "id": "drift-schema-default-changed",
+      "category": "drift",
+      "question": "Q1",
+      "title": "A parameter default changes",
+      "expect": {
+        "desc": "same",
+        "four-field": "differ",
+        "full": "differ"
+      },
+      "security": "changed"
+    },
+    {
+      "id": "drift-schema-enum-widened",
+      "category": "drift",
+      "question": "Q1",
+      "title": "An enum gains a value",
+      "expect": {
+        "desc": "same",
+        "four-field": "differ",
+        "full": "differ"
+      },
+      "security": "changed"
+    },
+    {
+      "id": "drift-schema-additional-properties",
+      "category": "drift",
+      "question": "Q1",
+      "title": "additionalProperties false -> true",
+      "expect": {
+        "desc": "same",
+        "four-field": "differ",
+        "full": "differ"
+      },
+      "security": "changed"
+    },
+    {
+      "id": "drift-annotation-readonly-flip",
+      "category": "drift",
+      "question": "Q1",
+      "title": "readOnlyHint true -> false",
+      "expect": {
+        "desc": "same",
+        "four-field": "differ",
+        "full": "differ"
+      },
+      "security": "changed"
+    },
+    {
+      "id": "drift-annotation-destructive-flip",
+      "category": "drift",
+      "question": "Q1",
+      "title": "destructiveHint false -> true",
+      "expect": {
+        "desc": "same",
+        "four-field": "differ",
+        "full": "differ"
+      },
+      "security": "changed"
+    },
+    {
+      "id": "drift-annotations-removed",
+      "category": "drift",
+      "question": "Q1",
+      "title": "The annotations object disappears",
+      "expect": {
+        "desc": "same",
+        "four-field": "differ",
+        "full": "differ"
+      },
+      "security": "changed"
+    },
+    {
+      "id": "drift-annotations-absent-to-empty",
+      "category": "drift",
+      "question": "Q1",
+      "title": "A tool without annotations gains an empty annotations object",
+      "expect": {
+        "desc": "same",
+        "four-field": "differ",
+        "full": "differ"
+      },
+      "security": "informational"
+    },
+    {
+      "id": "scope-title-changed",
+      "category": "scope",
+      "question": "Q1",
+      "title": "title changes",
+      "expect": {
+        "desc": "same",
+        "four-field": "same",
+        "full": "differ"
+      },
+      "security": "informational"
+    },
+    {
+      "id": "scope-output-schema-changed",
+      "category": "scope",
+      "question": "Q1",
+      "title": "outputSchema gains a field",
+      "expect": {
+        "desc": "same",
+        "four-field": "same",
+        "full": "differ"
+      },
+      "security": "informational"
+    },
+    {
+      "id": "scope-meta-ui-resource",
+      "category": "scope",
+      "question": "Q6",
+      "title": "_meta.ui.resourceUri points somewhere else",
+      "expect": {
+        "desc": "same",
+        "four-field": "same",
+        "full": "differ"
+      },
+      "security": "informational"
+    },
+    {
+      "id": "scope-meta-volatile",
+      "category": "scope",
+      "question": "Q6",
+      "title": "_meta gains a timestamp that changes every listing",
+      "expect": {
+        "desc": "same",
+        "four-field": "same",
+        "full": "differ"
+      },
+      "security": "informational"
+    },
+    {
+      "id": "scope-icons-changed",
+      "category": "scope",
+      "question": "Q1",
+      "title": "Icon URL changes",
+      "expect": {
+        "desc": "same",
+        "four-field": "same",
+        "full": "differ"
+      },
+      "security": "informational"
+    },
+    {
+      "id": "scope-unknown-member",
+      "category": "scope",
+      "question": "Q1",
+      "title": "An unknown member with instruction-like text is added",
+      "expect": {
+        "desc": "same",
+        "four-field": "same",
+        "full": "differ"
+      },
+      "security": "informational"
+    },
+    {
+      "id": "reject-duplicate-key-evil-first",
+      "category": "reject",
+      "question": "Q3",
+      "title": "Duplicate 'description' member, malicious value first",
+      "expect": {
+        "desc": "reject",
+        "four-field": "reject",
+        "full": "reject"
+      },
+      "security": "changed-or-error"
+    },
+    {
+      "id": "reject-duplicate-key-evil-last",
+      "category": "reject",
+      "question": "Q3",
+      "title": "Duplicate 'description' member, malicious value last",
+      "expect": {
+        "desc": "reject",
+        "four-field": "reject",
+        "full": "reject"
+      },
+      "security": "changed-or-error"
+    },
+    {
+      "id": "reject-duplicate-key-nested",
+      "category": "reject",
+      "question": "Q3",
+      "title": "Duplicate member inside inputSchema",
+      "expect": {
+        "desc": "reject",
+        "four-field": "reject",
+        "full": "reject"
+      },
+      "security": "changed-or-error"
+    },
+    {
+      "id": "reject-duplicate-tool-name",
+      "category": "reject",
+      "question": "Q3",
+      "title": "Two tools share a name (shadowing)",
+      "expect": {
+        "desc": "reject",
+        "four-field": "reject",
+        "full": "reject"
+      },
+      "security": "changed-or-error"
+    },
+    {
+      "id": "reject-lone-surrogate",
+      "category": "reject",
+      "question": "Q3",
+      "title": "Unpaired surrogate escape \\ud800 in a description",
+      "expect": {
+        "desc": "reject",
+        "four-field": "reject",
+        "full": "reject"
+      },
+      "security": "changed-or-error"
+    },
+    {
+      "id": "reject-nan",
+      "category": "reject",
+      "question": "Q3",
+      "title": "NaN as a number",
+      "expect": {
+        "desc": "reject",
+        "four-field": "reject",
+        "full": "reject"
+      },
+      "security": "changed-or-error"
+    },
+    {
+      "id": "reject-number-overflow",
+      "category": "reject",
+      "question": "Q3",
+      "title": "Number 1e400 (overflows binary64)",
+      "expect": {
+        "desc": "reject",
+        "four-field": "reject",
+        "full": "reject"
+      },
+      "security": "changed-or-error"
+    },
+    {
+      "id": "reject-missing-name",
+      "category": "reject",
+      "question": "Q3",
+      "title": "A tool without a name",
+      "expect": {
+        "desc": "reject",
+        "four-field": "reject",
+        "full": "reject"
+      },
+      "security": "changed-or-error"
+    },
+    {
+      "id": "reject-not-a-tool-list",
+      "category": "reject",
+      "question": "Q3",
+      "title": "tools is an object, not an array",
+      "expect": {
+        "desc": "reject",
+        "four-field": "reject",
+        "full": "reject"
+      },
+      "security": "changed-or-error"
+    },
+    {
+      "id": "reject-invalid-utf8",
+      "category": "reject",
+      "question": "Q3",
+      "title": "Invalid UTF-8 byte (0xFF) inside a description",
+      "expect": {
+        "desc": "reject",
+        "four-field": "reject",
+        "full": "reject"
+      },
+      "security": "changed-or-error"
+    },
+    {
+      "id": "limit-int-beyond-2-53",
+      "category": "limitation",
+      "question": "Q5",
+      "title": "maximum 9007199254740992 -> 9007199254740993",
+      "expect": {
+        "desc": "same",
+        "four-field": "same",
+        "full": "same"
+      },
+      "security": "informational"
+    }
+  ]
+}

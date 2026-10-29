@@ -1,0 +1,35 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  python:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: pip install pytest rfc8785
+      - run: python scripts/gen_vectors.py --check
+      - run: cd python && python -m pytest -q
+      - run: cd python && python -m mcp_digest verify ../vectors
+      - name: Runner self-test (built-in adapters)
+        run: python runner/run.py -a reference -a naive-raw-bytes -a naive-sorted-json -a naive-description-only --out /tmp/results
+
+  rust:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: clippy, rustfmt
+      - run: cd rust && cargo fmt --check && cargo clippy --all-targets -- -D warnings && cargo test

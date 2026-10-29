@@ -1,0 +1,364 @@
+{
+  "adapter": "naive-sorted-json",
+  "description": "Baseline: Python json.loads, then json.dumps(sort_keys=True)",
+  "url": "https://github.com/purysho/mcp-digest-vectors",
+  "available": true,
+  "version": "builtin",
+  "control": "unchanged",
+  "control_detail": "",
+  "seconds": 3.5,
+  "rows": [
+    {
+      "id": "eq-key-order",
+      "category": "equivalence",
+      "security": "unchanged",
+      "outcome": "unchanged",
+      "verdict": "pass",
+      "detail": ""
+    },
+    {
+      "id": "eq-whitespace",
+      "category": "equivalence",
+      "security": "unchanged",
+      "outcome": "unchanged",
+      "verdict": "pass",
+      "detail": ""
+    },
+    {
+      "id": "eq-number-forms",
+      "category": "equivalence",
+      "security": "unchanged",
+      "outcome": "changed",
+      "verdict": "false-alarm",
+      "detail": ""
+    },
+    {
+      "id": "eq-negative-zero",
+      "category": "equivalence",
+      "security": "unchanged",
+      "outcome": "changed",
+      "verdict": "false-alarm",
+      "detail": ""
+    },
+    {
+      "id": "eq-unicode-escapes",
+      "category": "equivalence",
+      "security": "unchanged",
+      "outcome": "unchanged",
+      "verdict": "pass",
+      "detail": ""
+    },
+    {
+      "id": "eq-solidus-escape",
+      "category": "equivalence",
+      "security": "unchanged",
+      "outcome": "unchanged",
+      "verdict": "pass",
+      "detail": ""
+    },
+    {
+      "id": "eq-control-escape",
+      "category": "equivalence",
+      "security": "unchanged",
+      "outcome": "unchanged",
+      "verdict": "pass",
+      "detail": ""
+    },
+    {
+      "id": "eq-tool-order",
+      "category": "equivalence",
+      "security": "unchanged",
+      "outcome": "changed",
+      "verdict": "false-alarm",
+      "detail": ""
+    },
+    {
+      "id": "drift-description-appended",
+      "category": "drift",
+      "security": "changed",
+      "outcome": "changed",
+      "verdict": "pass",
+      "detail": ""
+    },
+    {
+      "id": "drift-zero-width",
+      "category": "drift",
+      "security": "changed",
+      "outcome": "changed",
+      "verdict": "pass",
+      "detail": ""
+    },
+    {
+      "id": "drift-homoglyph",
+      "category": "drift",
+      "security": "changed",
+      "outcome": "changed",
+      "verdict": "pass",
+      "detail": ""
+    },
+    {
+      "id": "drift-trailing-space",
+      "category": "drift",
+      "security": "changed",
+      "outcome": "changed",
+      "verdict": "pass",
+      "detail": ""
+    },
+    {
+      "id": "drift-unicode-nfd",
+      "category": "drift",
+      "security": "changed",
+      "outcome": "changed",
+      "verdict": "pass",
+      "detail": ""
+    },
+    {
+      "id": "drift-ansi-escape",
+      "category": "drift",
+      "security": "changed",
+      "outcome": "changed",
+      "verdict": "pass",
+      "detail": ""
+    },
+    {
+      "id": "drift-description-absent-to-empty",
+      "category": "drift",
+      "security": "changed",
+      "outcome": "changed",
+      "verdict": "pass",
+      "detail": ""
+    },
+    {
+      "id": "drift-tool-added",
+      "category": "drift",
+      "security": "changed",
+      "outcome": "changed",
+      "verdict": "pass",
+      "detail": ""
+    },
+    {
+      "id": "drift-tool-removed",
+      "category": "drift",
+      "security": "changed",
+      "outcome": "changed",
+      "verdict": "pass",
+      "detail": ""
+    },
+    {
+      "id": "drift-tool-renamed",
+      "category": "drift",
+      "security": "changed",
+      "outcome": "changed",
+      "verdict": "pass",
+      "detail": ""
+    },
+    {
+      "id": "drift-schema-property-description",
+      "category": "drift",
+      "security": "changed",
+      "outcome": "changed",
+      "verdict": "pass",
+      "detail": ""
+    },
+    {
+      "id": "drift-schema-required-added",
+      "category": "drift",
+      "security": "changed",
+      "outcome": "changed",
+      "verdict": "pass",
+      "detail": ""
+    },
+    {
+      "id": "drift-schema-default-changed",
+      "category": "drift",
+      "security": "changed",
+      "outcome": "changed",
+      "verdict": "pass",
+      "detail": ""
+    },
+    {
+      "id": "drift-schema-enum-widened",
+      "category": "drift",
+      "security": "changed",
+      "outcome": "changed",
+      "verdict": "pass",
+      "detail": ""
+    },
+    {
+      "id": "drift-schema-additional-properties",
+      "category": "drift",
+      "security": "changed",
+      "outcome": "changed",
+      "verdict": "pass",
+      "detail": ""
+    },
+    {
+      "id": "drift-annotation-readonly-flip",
+      "category": "drift",
+      "security": "changed",
+      "outcome": "changed",
+      "verdict": "pass",
+      "detail": ""
+    },
+    {
+      "id": "drift-annotation-destructive-flip",
+      "category": "drift",
+      "security": "changed",
+      "outcome": "changed",
+      "verdict": "pass",
+      "detail": ""
+    },
+    {
+      "id": "drift-annotations-removed",
+      "category": "drift",
+      "security": "changed",
+      "outcome": "changed",
+      "verdict": "pass",
+      "detail": ""
+    },
+    {
+      "id": "drift-annotations-absent-to-empty",
+      "category": "drift",
+      "security": "informational",
+      "outcome": "changed",
+      "verdict": "info",
+      "detail": ""
+    },
+    {
+      "id": "scope-title-changed",
+      "category": "scope",
+      "security": "informational",
+      "outcome": "changed",
+      "verdict": "info",
+      "detail": ""
+    },
+    {
+      "id": "scope-output-schema-changed",
+      "category": "scope",
+      "security": "informational",
+      "outcome": "changed",
+      "verdict": "info",
+      "detail": ""
+    },
+    {
+      "id": "scope-meta-ui-resource",
+      "category": "scope",
+      "security": "informational",
+      "outcome": "changed",
+      "verdict": "info",
+      "detail": ""
+    },
+    {
+      "id": "scope-meta-volatile",
+      "category": "scope",
+      "security": "informational",
+      "outcome": "changed",
+      "verdict": "info",
+      "detail": ""
+    },
+    {
+      "id": "scope-icons-changed",
+      "category": "scope",
+      "security": "informational",
+      "outcome": "changed",
+      "verdict": "info",
+      "detail": ""
+    },
+    {
+      "id": "scope-unknown-member",
+      "category": "scope",
+      "security": "informational",
+      "outcome": "changed",
+      "verdict": "info",
+      "detail": ""
+    },
+    {
+      "id": "reject-duplicate-key-evil-first",
+      "category": "reject",
+      "security": "changed-or-error",
+      "outcome": "unchanged",
+      "verdict": "miss",
+      "detail": ""
+    },
+    {
+      "id": "reject-duplicate-key-evil-last",
+      "category": "reject",
+      "security": "changed-or-error",
+      "outcome": "changed",
+      "verdict": "pass",
+      "detail": ""
+    },
+    {
+      "id": "reject-duplicate-key-nested",
+      "category": "reject",
+      "security": "changed-or-error",
+      "outcome": "changed",
+      "verdict": "pass",
+      "detail": ""
+    },
+    {
+      "id": "reject-duplicate-tool-name",
+      "category": "reject",
+      "security": "changed-or-error",
+      "outcome": "changed",
+      "verdict": "pass",
+      "detail": ""
+    },
+    {
+      "id": "reject-lone-surrogate",
+      "category": "reject",
+      "security": "changed-or-error",
+      "outcome": "changed",
+      "verdict": "pass",
+      "detail": ""
+    },
+    {
+      "id": "reject-nan",
+      "category": "reject",
+      "security": "changed-or-error",
+      "outcome": "changed",
+      "verdict": "pass",
+      "detail": ""
+    },
+    {
+      "id": "reject-number-overflow",
+      "category": "reject",
+      "security": "changed-or-error",
+      "outcome": "changed",
+      "verdict": "pass",
+      "detail": ""
+    },
+    {
+      "id": "reject-missing-name",
+      "category": "reject",
+      "security": "changed-or-error",
+      "outcome": "changed",
+      "verdict": "pass",
+      "detail": ""
+    },
+    {
+      "id": "reject-not-a-tool-list",
+      "category": "reject",
+      "security": "changed-or-error",
+      "outcome": "changed",
+      "verdict": "pass",
+      "detail": ""
+    },
+    {
+      "id": "reject-invalid-utf8",
+      "category": "reject",
+      "security": "changed-or-error",
+      "outcome": "error",
+      "verdict": "pass",
+      "detail": "UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 664: invalid start byte"
+    },
+    {
+      "id": "limit-int-beyond-2-53",
+      "category": "limitation",
+      "security": "informational",
+      "outcome": "changed",
+      "verdict": "info",
+      "detail": ""
+    }
+  ]
+}

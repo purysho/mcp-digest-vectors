@@ -1,0 +1,364 @@
+{
+  "adapter": "latch",
+  "description": "purysho/Latch ToolRegistry::reconcile (stdio parsing emulated), commit de954a8",
+  "url": "https://github.com/purysho/Latch",
+  "available": true,
+  "version": "de954a8",
+  "control": "unchanged",
+  "control_detail": "added=0 changed=0 missing=0 unchanged=3",
+  "seconds": 0.3,
+  "rows": [
+    {
+      "id": "eq-key-order",
+      "category": "equivalence",
+      "security": "unchanged",
+      "outcome": "unchanged",
+      "verdict": "pass",
+      "detail": "added=0 changed=0 missing=0 unchanged=3"
+    },
+    {
+      "id": "eq-whitespace",
+      "category": "equivalence",
+      "security": "unchanged",
+      "outcome": "unchanged",
+      "verdict": "pass",
+      "detail": "added=0 changed=0 missing=0 unchanged=3"
+    },
+    {
+      "id": "eq-number-forms",
+      "category": "equivalence",
+      "security": "unchanged",
+      "outcome": "changed",
+      "verdict": "false-alarm",
+      "detail": "added=0 changed=2 missing=0 unchanged=1"
+    },
+    {
+      "id": "eq-negative-zero",
+      "category": "equivalence",
+      "security": "unchanged",
+      "outcome": "changed",
+      "verdict": "false-alarm",
+      "detail": "added=0 changed=1 missing=0 unchanged=2"
+    },
+    {
+      "id": "eq-unicode-escapes",
+      "category": "equivalence",
+      "security": "unchanged",
+      "outcome": "unchanged",
+      "verdict": "pass",
+      "detail": "added=0 changed=0 missing=0 unchanged=3"
+    },
+    {
+      "id": "eq-solidus-escape",
+      "category": "equivalence",
+      "security": "unchanged",
+      "outcome": "unchanged",
+      "verdict": "pass",
+      "detail": "added=0 changed=0 missing=0 unchanged=3"
+    },
+    {
+      "id": "eq-control-escape",
+      "category": "equivalence",
+      "security": "unchanged",
+      "outcome": "unchanged",
+      "verdict": "pass",
+      "detail": "added=0 changed=0 missing=0 unchanged=3"
+    },
+    {
+      "id": "eq-tool-order",
+      "category": "equivalence",
+      "security": "unchanged",
+      "outcome": "unchanged",
+      "verdict": "pass",
+      "detail": "added=0 changed=0 missing=0 unchanged=3"
+    },
+    {
+      "id": "drift-description-appended",
+      "category": "drift",
+      "security": "changed",
+      "outcome": "changed",
+      "verdict": "pass",
+      "detail": "added=0 changed=1 missing=0 unchanged=2"
+    },
+    {
+      "id": "drift-zero-width",
+      "category": "drift",
+      "security": "changed",
+      "outcome": "changed",
+      "verdict": "pass",
+      "detail": "added=0 changed=1 missing=0 unchanged=2"
+    },
+    {
+      "id": "drift-homoglyph",
+      "category": "drift",
+      "security": "changed",
+      "outcome": "changed",
+      "verdict": "pass",
+      "detail": "added=0 changed=1 missing=0 unchanged=2"
+    },
+    {
+      "id": "drift-trailing-space",
+      "category": "drift",
+      "security": "changed",
+      "outcome": "changed",
+      "verdict": "pass",
+      "detail": "added=0 changed=1 missing=0 unchanged=2"
+    },
+    {
+      "id": "drift-unicode-nfd",
+      "category": "drift",
+      "security": "changed",
+      "outcome": "changed",
+      "verdict": "pass",
+      "detail": "added=0 changed=1 missing=0 unchanged=2"
+    },
+    {
+      "id": "drift-ansi-escape",
+      "category": "drift",
+      "security": "changed",
+      "outcome": "changed",
+      "verdict": "pass",
+      "detail": "added=0 changed=1 missing=0 unchanged=2"
+    },
+    {
+      "id": "drift-description-absent-to-empty",
+      "category": "drift",
+      "security": "changed",
+      "outcome": "changed",
+      "verdict": "pass",
+      "detail": "added=0 changed=1 missing=0 unchanged=2"
+    },
+    {
+      "id": "drift-tool-added",
+      "category": "drift",
+      "security": "changed",
+      "outcome": "changed",
+      "verdict": "pass",
+      "detail": "added=1 changed=0 missing=0 unchanged=3; new tool 'run_shell' active_tool=Ok"
+    },
+    {
+      "id": "drift-tool-removed",
+      "category": "drift",
+      "security": "changed",
+      "outcome": "changed",
+      "verdict": "pass",
+      "detail": "added=0 changed=0 missing=1 unchanged=2"
+    },
+    {
+      "id": "drift-tool-renamed",
+      "category": "drift",
+      "security": "changed",
+      "outcome": "changed",
+      "verdict": "pass",
+      "detail": "added=1 changed=0 missing=1 unchanged=2; new tool 'search_documents' active_tool=Ok"
+    },
+    {
+      "id": "drift-schema-property-description",
+      "category": "drift",
+      "security": "changed",
+      "outcome": "changed",
+      "verdict": "pass",
+      "detail": "added=0 changed=1 missing=0 unchanged=2"
+    },
+    {
+      "id": "drift-schema-required-added",
+      "category": "drift",
+      "security": "changed",
+      "outcome": "changed",
+      "verdict": "pass",
+      "detail": "added=0 changed=1 missing=0 unchanged=2"
+    },
+    {
+      "id": "drift-schema-default-changed",
+      "category": "drift",
+      "security": "changed",
+      "outcome": "changed",
+      "verdict": "pass",
+      "detail": "added=0 changed=1 missing=0 unchanged=2"
+    },
+    {
+      "id": "drift-schema-enum-widened",
+      "category": "drift",
+      "security": "changed",
+      "outcome": "changed",
+      "verdict": "pass",
+      "detail": "added=0 changed=1 missing=0 unchanged=2"
+    },
+    {
+      "id": "drift-schema-additional-properties",
+      "category": "drift",
+      "security": "changed",
+      "outcome": "changed",
+      "verdict": "pass",
+      "detail": "added=0 changed=1 missing=0 unchanged=2"
+    },
+    {
+      "id": "drift-annotation-readonly-flip",
+      "category": "drift",
+      "security": "changed",
+      "outcome": "changed",
+      "verdict": "pass",
+      "detail": "added=0 changed=1 missing=0 unchanged=2"
+    },
+    {
+      "id": "drift-annotation-destructive-flip",
+      "category": "drift",
+      "security": "changed",
+      "outcome": "changed",
+      "verdict": "pass",
+      "detail": "added=0 changed=1 missing=0 unchanged=2"
+    },
+    {
+      "id": "drift-annotations-removed",
+      "category": "drift",
+      "security": "changed",
+      "outcome": "changed",
+      "verdict": "pass",
+      "detail": "added=0 changed=1 missing=0 unchanged=2"
+    },
+    {
+      "id": "drift-annotations-absent-to-empty",
+      "category": "drift",
+      "security": "informational",
+      "outcome": "changed",
+      "verdict": "info",
+      "detail": "added=0 changed=1 missing=0 unchanged=2"
+    },
+    {
+      "id": "scope-title-changed",
+      "category": "scope",
+      "security": "informational",
+      "outcome": "changed",
+      "verdict": "info",
+      "detail": "added=0 changed=1 missing=0 unchanged=2"
+    },
+    {
+      "id": "scope-output-schema-changed",
+      "category": "scope",
+      "security": "informational",
+      "outcome": "changed",
+      "verdict": "info",
+      "detail": "added=0 changed=1 missing=0 unchanged=2"
+    },
+    {
+      "id": "scope-meta-ui-resource",
+      "category": "scope",
+      "security": "informational",
+      "outcome": "changed",
+      "verdict": "info",
+      "detail": "added=0 changed=1 missing=0 unchanged=2"
+    },
+    {
+      "id": "scope-meta-volatile",
+      "category": "scope",
+      "security": "informational",
+      "outcome": "changed",
+      "verdict": "info",
+      "detail": "added=0 changed=1 missing=0 unchanged=2"
+    },
+    {
+      "id": "scope-icons-changed",
+      "category": "scope",
+      "security": "informational",
+      "outcome": "changed",
+      "verdict": "info",
+      "detail": "added=0 changed=1 missing=0 unchanged=2"
+    },
+    {
+      "id": "scope-unknown-member",
+      "category": "scope",
+      "security": "informational",
+      "outcome": "changed",
+      "verdict": "info",
+      "detail": "added=0 changed=1 missing=0 unchanged=2"
+    },
+    {
+      "id": "reject-duplicate-key-evil-first",
+      "category": "reject",
+      "security": "changed-or-error",
+      "outcome": "unchanged",
+      "verdict": "miss",
+      "detail": "added=0 changed=0 missing=0 unchanged=3"
+    },
+    {
+      "id": "reject-duplicate-key-evil-last",
+      "category": "reject",
+      "security": "changed-or-error",
+      "outcome": "changed",
+      "verdict": "pass",
+      "detail": "added=0 changed=1 missing=0 unchanged=2"
+    },
+    {
+      "id": "reject-duplicate-key-nested",
+      "category": "reject",
+      "security": "changed-or-error",
+      "outcome": "changed",
+      "verdict": "pass",
+      "detail": "added=0 changed=1 missing=0 unchanged=2"
+    },
+    {
+      "id": "reject-duplicate-tool-name",
+      "category": "reject",
+      "security": "changed-or-error",
+      "outcome": "error",
+      "verdict": "pass",
+      "detail": "reconcile: MCP discovery returned duplicate tool name: send_email"
+    },
+    {
+      "id": "reject-lone-surrogate",
+      "category": "reject",
+      "security": "changed-or-error",
+      "outcome": "error",
+      "verdict": "pass",
+      "detail": "invalid JSON on MCP stdout: unexpected end of hex escape at line 1 column 704"
+    },
+    {
+      "id": "reject-nan",
+      "category": "reject",
+      "security": "changed-or-error",
+      "outcome": "error",
+      "verdict": "pass",
+      "detail": "invalid JSON on MCP stdout: expected value at line 1 column 1298"
+    },
+    {
+      "id": "reject-number-overflow",
+      "category": "reject",
+      "security": "changed-or-error",
+      "outcome": "error",
+      "verdict": "pass",
+      "detail": "invalid JSON on MCP stdout: number out of range at line 1 column 1302"
+    },
+    {
+      "id": "reject-missing-name",
+      "category": "reject",
+      "security": "changed-or-error",
+      "outcome": "error",
+      "verdict": "pass",
+      "detail": "descriptor: missing field `name`"
+    },
+    {
+      "id": "reject-not-a-tool-list",
+      "category": "reject",
+      "security": "changed-or-error",
+      "outcome": "error",
+      "verdict": "pass",
+      "detail": "tools/list omitted tools array"
+    },
+    {
+      "id": "reject-invalid-utf8",
+      "category": "reject",
+      "security": "changed-or-error",
+      "outcome": "error",
+      "verdict": "pass",
+      "detail": "invalid JSON on MCP stdout: invalid unicode code point at line 1 column 698"
+    },
+    {
+      "id": "limit-int-beyond-2-53",
+      "category": "limitation",
+      "security": "informational",
+      "outcome": "changed",
+      "verdict": "info",
+      "detail": "added=0 changed=1 missing=0 unchanged=2"
+    }
+  ]
+}
